@@ -12,7 +12,7 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_instance" "instance_region_1" {
   ami           = data.aws_ami.ubuntu.id
-  instance_type = var.env == "prod" ? "t3.medium" : "t2-micro"
+  instance_type = "t2-micro"
 
   provider = aws.east-1
   for_each  = {
